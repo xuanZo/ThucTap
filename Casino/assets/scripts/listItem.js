@@ -73,9 +73,16 @@ cc.Class({
     //cap nhat anh moi moi node khi node den bien
     setImage: function () { 
         let item;       
-        let temp = this.items[Math.floor(Math.random() * 15)];
+        // let temp = this.items[Math.floor(Math.random() * 15)];
+        let temp = this.items[1]
         item = temp.iconSF;
         return item;
+    },
+
+    stopAllItem() {
+        this.arrayList.forEach(item => {
+            item.getComponent('ItemTemplate').stopSpin();
+        });
     },
     onLoad() {
         this.init();

@@ -35,35 +35,42 @@ cc.Class({
     },
     //ham de tao su kien quay
     startSpin: function () {
-        let max = 5;
-        let min = 1;
-        this.isSpinComplete = !this.isSpinComplete;
-        this.stopAfterSpinCount = 4;
+
+        this.isSpinComplete = false;
+        // this.stopAfterSpinCount = 4;
         this.spinCount = 0;
-        this.tailNode = this.parent.arrayList[this.parent.arrayList.length - 1];
+        // this.tailNode = this.parent.arrayList[this.parent.arrayList.length - 1];
         // cc.log(this.tailNode)
+    },
+    stopSpin() {
+        this.isSpinComplete = true;
     },
     spin: function () {
         // let time = 0;
-        let posX = this.node.x;
-        let posY = this.heightFrame / 3 * Math.floor(19 / 5) + this.heightFrame / 6;
+
         // time = Math.floor((posY + this.node.height / 2) / this.speed);
         if (this.isSpinComplete) {
             return;
         }
         if (!this.isSpinComplete) {
-
-            this.node.y -= this.speed;
-            this.spinCount++;    
-            // cc.log(this.spinCount)        
-            if (this.node.y <= -this.node.height / 2) {                
-                this.node.getComponent(cc.Sprite).spriteFrame = this.parent.setImage();
-                this.node.setPosition(posX,posY);
-            }
-            if (this.spinCount == 128) {
+            if (this.spinCount > 4) {
                 this.isSpinComplete = true;
+                this.parent.stopAllItem();
                 cc.log("index= ", this.index + " posY= ", this.node.y);
+                return;
             }
+            this.node.y -= this.speed;
+            // this.spinCount++;    
+            // cc.log(this.spinCount)        
+            if (this.node.y <= -this.node.height / 2) {
+                let posX = this.node.x;
+                let delta = -this.node.height/2 - this.node.y;                
+                let posY = this.heightFrame * 7 / 6 - delta;
+                this.spinCount++;
+                this.node.getComponent(cc.Sprite).spriteFrame = this.parent.setImage();
+                this.node.setPosition(posX, posY);
+            }
+
         }
         // cc.log(this.spinCount)
 
