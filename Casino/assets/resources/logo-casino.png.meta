@@ -1,0 +1,32 @@
+{
+  "ver": "2.3.0",
+  "uuid": "5cdcc9bf-b6b0-4493-885a-7bb44419f559",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "platformSettings": {},
+  "subMetas": {
+    "logo-casino": {
+      "ver": "1.0.3",
+      "uuid": "01e7f8a3-c148-4edf-b07b-b778398eb3aa",
+      "rawTextureUuid": "5cdcc9bf-b6b0-4493-885a-7bb44419f559",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 384,
+      "height": 76,
+      "rawWidth": 384,
+      "rawHeight": 76,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
